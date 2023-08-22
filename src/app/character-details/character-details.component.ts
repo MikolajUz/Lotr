@@ -10,18 +10,15 @@ import { Location } from '@angular/common';
   styleUrls: ['./character-details.component.css'],
 })
 export class CharacterDetailsComponent {
+  // zmienic tak jak character list
   route: ActivatedRoute = inject(ActivatedRoute);
   lotrService: LotrService = inject(LotrService);
   character: Character | undefined;
 
-  constructor(){
-
+  constructor() {
     const id = Number(this.route.snapshot.params['id']);
-    this.lotrService
-      .getCharacterById(id).then((character)=>{
-        this.character=character
-      }); 
-      
-    }
-
+    this.lotrService.getCharacterById(id).then((character) => {
+      this.character = character;
+    });
+  }
 }
