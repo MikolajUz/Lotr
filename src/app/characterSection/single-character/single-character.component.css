@@ -1,0 +1,15 @@
+.character {
+  background: url(../../../assets/images/characterList.jpg) no-repeat center
+    center scroll;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+}
+.character:hover {
+  box-shadow: var(--textColor) 0 3px 8px;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="details-section">
+    <h2 class="listing-heading">{{ character?.name }}</h2>
+    <div>
+      <ul>
+        <li class="details-heading">Apperance:</li>
+        <li>Height: {{ character?.height }}</li>
+        <li>Hair color: {{ character?.hair_color }}</li>
+        <li>Eye color: {{ character?.eye_color }}</li>
+        <li>Gender: {{ character?.gender }}</li>
+      </ul>
+
+      <h2 class="details-heading">Personal info</h2>
+      <ul>
+        <li>Birth date: {{ character?.date_of_birth }}</li>
+        <li>Death date: {{ character?.date_of_death }}</li>
+      </ul>
+
+      <h2 class="details-heading">Weapons</h2>
+      <ul>
+        <li>{{ character?.weapons }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
