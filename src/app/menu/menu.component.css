@@ -1,3 +1,8 @@
+:root {
+  --textColor: rgb(0, 2, 97);
+
+}
+
 .menu {
   padding: 1rem;
   position: absolute;
@@ -24,3 +29,4 @@
 .button:hover {
   box-shadow: var(--textColor) 0 3px 8px;
 }
+

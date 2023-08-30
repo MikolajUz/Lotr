@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SingleCharacterComponent } from './characterSection/single-character/single-character.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
+import { LotrService } from './lotr.service';
 
 @NgModule({
   declarations: [

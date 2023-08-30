@@ -1,6 +1,6 @@
 <div class="results">
   <app-single-character
-    *ngFor="let Character of characterList"
+    *ngFor="let Character of characterList | async"
     [character]="Character"
   >
   </app-single-character>
