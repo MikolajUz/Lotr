@@ -12,6 +12,7 @@ $secondary-color: rgb(240, 225, 19);
 }
 
 .wrapper {
+  @include flexCenter;
   background-color: $primary-color;
   min-height: 100vh;
   padding: 0 15% 0 15%;

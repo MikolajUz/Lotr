@@ -1,15 +1,7 @@
 @import "../../app.component.scss";
 
-.container {
-  @include flexCenter;
-  height: 100vh;
-  min-height: 900px;
-  min-width: 550px;
-}
-
 .details-section {
-  background: url(../../../assets/images/Details.jpg) no-repeat center center
-    scroll;
+  background: url(../../../assets/images/Details.jpg) no-repeat center center;
   background-size: contain;
   width: 32rem;
   height: 45rem;

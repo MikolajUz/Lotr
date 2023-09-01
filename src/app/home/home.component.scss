@@ -1,8 +1,5 @@
 @import "../app.component.scss";
 
-.wrapper {
-  @include flexCenter;
-}
 img {
   @include flexCenter;
   content: url(../../assets/images/homePageBackground.jpg);
