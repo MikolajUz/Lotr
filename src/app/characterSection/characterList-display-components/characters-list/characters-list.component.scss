@@ -1,0 +1,11 @@
+@import "../../../app.component.scss";
+
+.results {
+  @include flexCenter;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  font-family: Lotr;
+  height: fit-content;
+  color: $secondary-color;
+}

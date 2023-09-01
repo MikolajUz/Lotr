@@ -1,0 +1,11 @@
+@import "../app.component.scss";
+
+.wrapper {
+  @include flexCenter;
+}
+img {
+  @include flexCenter;
+  content: url(../../assets/images/homePageBackground.jpg);
+  padding-top: 75px;
+  border-radius: 50%;
+}

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Character } from './characterSection/character';
+import { Character } from './characterSection/interfaces/character-interface';
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CharacterDataApi } from 'src/characterDataApi-interface';
+import { CharacterDataApi } from './characterSection/interfaces/characterDataApi-interface';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,7 @@ export class LotrService {
   getAllCharacters(): Observable<Character[]> {
     return this.http
       .get<CharacterDataApi>(this.url)
-      .pipe(map((event) => event.results));
+      .pipe(map((fullCharacterData) => fullCharacterData.results));
   }
   getCharacterById(id: number): Observable<Character> {
     const characterUrl = `${this.url}/${id}`;

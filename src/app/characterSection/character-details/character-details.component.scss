@@ -1,14 +1,10 @@
+@import "../../app.component.scss";
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter;
   height: 100vh;
   min-height: 900px;
-  background: url(../../../assets/images/characterDetailsBackground.jpg)
-    no-repeat center center scroll;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
+  min-width: 550px;
 }
 
 .details-section {
@@ -19,7 +15,6 @@
   height: 45rem;
   display: flex;
   justify-items: center;
-  display: flex;
   flex-direction: column;
   border-radius: 20px;
 }
@@ -49,5 +44,5 @@ li,
 .listing-heading {
   font-family: Lotr;
   background-color: black;
-  color: var(--textColor);
+  color: $secondary-color;
 }

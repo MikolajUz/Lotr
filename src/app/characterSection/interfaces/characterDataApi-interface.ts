@@ -1,4 +1,4 @@
-import { Character } from './app/characterSection/character';
+import { Character } from './character-interface';
 
 export interface CharacterDataApi {
   count: number;
