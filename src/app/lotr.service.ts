@@ -19,6 +19,11 @@ export class LotrService {
   }
   getCharacterById(id: number): Observable<Character> {
     const characterUrl = `${this.url}/${id}`;
-    return this.http.get<Character>(characterUrl);
+    return this.http.get<Character>(characterUrl).pipe(
+      map((apiChar) => {
+        apiChar.strength = 1;
+        return apiChar;
+      })
+    );
   }
 }

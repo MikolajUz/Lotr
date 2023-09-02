@@ -16,4 +16,5 @@ export interface Character {
   films: string[];
   books: string[];
   url: string;
+  strength: number;
 }

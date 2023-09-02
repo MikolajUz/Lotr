@@ -9,6 +9,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SingleCharacterComponent } from './characterSection/characterList-display-components/single-character/single-character.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
+import { ArmoryListComponent } from './armorySection/armory-list/armory-list.component';
+import { ArmoryItemComponent } from './armorySection/armory-item/armory-item.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { HomeComponent } from './home/home.component';
     SingleCharacterComponent,
     MenuComponent,
     HomeComponent,
+    ArmoryListComponent,
+    ArmoryItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [HttpClient],
