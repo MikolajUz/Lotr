@@ -1,0 +1,10 @@
+@import "../../app.component.scss";
+
+.list {
+  overflow-y: scroll;
+  width: fit-content;
+  height: 75vh;
+}
+.list::-webkit-scrollbar {
+  display: none;
+}

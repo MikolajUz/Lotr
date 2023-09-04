@@ -1,3 +1,4 @@
+import { Armory } from 'src/app/armorySection/interfaces/armory-interface';
 export interface Character {
   id: number;
   name: string;
@@ -17,4 +18,5 @@ export interface Character {
   books: string[];
   url: string;
   strength: number;
+  chosen_weapon: Armory;
 }
