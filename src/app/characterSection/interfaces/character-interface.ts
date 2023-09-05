@@ -18,5 +18,4 @@ export interface Character {
   books: string[];
   url: string;
   strength: number;
-  chosen_weapon: Armory;
 }
