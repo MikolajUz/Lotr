@@ -1,25 +1,30 @@
 import { Injectable } from '@angular/core';
-import { Character } from './character';
+import { Character } from './characterSection/interfaces/character-interface';
+import { Observable, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { CharacterDataApi } from './characterSection/interfaces/characterDataApi-interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LotrService {
+  private url = 'https://lotrapi.co/api/v1/characters';
 
+  constructor(private http: HttpClient) {}
 
-  url = 'https://lotrapi.co/api/v1/characters';
-  //url = 'http://localhost:3000/locations';
-  static baseUrl: any;
-
-  async getAllCharacters(): Promise<Character[]> {
-    const data = await fetch(this.url);
-    return (await data.json()) ?? [];
+  getAllCharacters(): Observable<Character[]> {
+    return this.http
+      .get<CharacterDataApi>(this.url)
+      .pipe(map((fullCharacterData) => fullCharacterData.results));
   }
 
-  async getCharacterById(id: number): Promise<Character | undefined> {
-    const data = await fetch(`${this.url}/${id}`);
-    return (await data.json()) ?? {};
+  getCharacterById(id: number): Observable<Character> {
+    const characterUrl = `${this.url}/${id}`;
+    return this.http.get<Character>(characterUrl).pipe(
+      map((apiChar) => {
+        apiChar.strength = Number(apiChar.height.slice(0, -2)) * 10;
+        return apiChar;
+      })
+    );
   }
-
-  constructor() {}
 }

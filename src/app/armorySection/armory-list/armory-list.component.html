@@ -1,0 +1,7 @@
+<div class="list">
+  <app-armory-item
+    *ngFor="let weapon of armoryList | async"
+    [armoryItem]="weapon"
+  >
+  </app-armory-item>
+</div>

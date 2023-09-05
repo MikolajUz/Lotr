@@ -1,0 +1,39 @@
+<!-- <div class="container"> -->
+<div class="details-section">
+  <h2 class="listing-heading">{{ (character | async)?.name }}</h2>
+  <div class="grid-container">
+    <div class="grid1">
+      <ul>
+        <li class="details-heading">Appearance:</li>
+        <li>Height: {{ (character | async)?.height }}</li>
+        <li>Hair color: {{ (character | async)?.hair_color }}</li>
+        <li>Eye color: {{ (character | async)?.eye_color }}</li>
+        <li>Gender: {{ (character | async)?.gender }}</li>
+        <li>Strength: {{ strengthDisplay }}</li>
+      </ul>
+      <h2 class="details-heading">Personal info</h2>
+      <ul>
+        <li>Birth date: {{ (character | async)?.date_of_birth }}</li>
+        <li>Death date: {{ (character | async)?.date_of_death }}</li>
+      </ul>
+      <ul>
+        <li *ngIf="isChosen">
+          Chosen weapon: {{ weaponChosen.name }}, str,
+          {{ weaponChosen.strength }}
+        </li>
+      </ul>
+    </div>
+    <div class="grid2">
+      <div class="weapons">
+        <h2 class="details-heading">Choose weapon:</h2>
+      </div>
+      <ul class="select">
+        <select [(ngModel)]="weaponChosen" (change)="Submit(weaponChosen)">
+          <option *ngFor="let weapon of weapons | async" [ngValue]="weapon">
+            {{ weapon.name }}
+          </option>
+        </select>
+      </ul>
+    </div>
+  </div>
+</div>
