@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ArmoryService } from '../services/armory.service';
 import { Armory } from '../interfaces/armory-interface';
 
 @Component({

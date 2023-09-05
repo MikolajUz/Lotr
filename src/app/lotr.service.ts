@@ -17,11 +17,12 @@ export class LotrService {
       .get<CharacterDataApi>(this.url)
       .pipe(map((fullCharacterData) => fullCharacterData.results));
   }
+
   getCharacterById(id: number): Observable<Character> {
     const characterUrl = `${this.url}/${id}`;
     return this.http.get<Character>(characterUrl).pipe(
       map((apiChar) => {
-        apiChar.strength = 1;
+        apiChar.strength = Number(apiChar.height.slice(0, -2)) * 10;
         return apiChar;
       })
     );

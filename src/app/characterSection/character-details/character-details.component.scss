@@ -1,5 +1,16 @@
 @import "../../app.component.scss";
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.grid1 {
+  grid-column: 1/2;
+}
+.grid2 {
+  grid-column: 2/3;
+}
+
 .details-section {
   background: url(../../../assets/images/Details.jpg) no-repeat center center;
   background-size: contain;
@@ -52,20 +63,17 @@ select {
   height: 100%;
   color: $secondary-color;
   cursor: pointer;
-  border: 1px solid $primary-color;
+  border: none;
+  border-bottom: 1px solid $secondary-color;
   border-radius: 3px;
   font-family: Lotr;
+  text-align: center;
 }
 
 .select {
   position: relative;
   left: 2rem;
   display: block;
-  width: 15em;
+  width: 10em;
   height: 2em;
-  line-height: 3;
-  overflow: hidden;
-  border-radius: 0.25em;
 }
-
-

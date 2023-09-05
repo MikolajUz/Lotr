@@ -5,8 +5,6 @@ import { ArmoryService } from 'src/app/armorySection/services/armory.service';
 import { Character } from '../interfaces/character-interface';
 import { Armory } from 'src/app/armorySection/interfaces/armory-interface';
 import { Observable, map, take } from 'rxjs';
-import { TestBed } from '@angular/core/testing';
-import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-character-details',
@@ -18,22 +16,27 @@ export class CharacterDetailsComponent {
     Number(this.route.snapshot.params['id'])
   );
   weapons: Observable<Armory[]> = this.armory.getWeapons();
-  weaponChosen!: Armory;
-  strength: number = 1;
 
+  weaponChosen!: Armory;
+  strengthDisplay!: number;
+  strengthBase!: number;
   isChosen: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private lotrService: LotrService,
     private armory: ArmoryService
-  ) {}
+  ) {
+    this.lotrService
+      .getCharacterById(Number(this.route.snapshot.params['id']))
+      .subscribe((data) => {
+        this.strengthDisplay = data.strength;
+        this.strengthBase = data.strength;
+      });
+  }
 
   Submit(weapon: Armory) {
-    console.log(weapon.name);
-    this.strength = this.strength + weapon.strength;
-    console.log(this.strength);
-
+    this.strengthDisplay = this.strengthBase + weapon.strength;
     this.isChosen = true;
   }
 }
